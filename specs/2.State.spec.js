@@ -12,7 +12,7 @@ describe("State", () => {
       ],
     };
 
-    expect(solveme).toBeInstanceOf(Object);
+    expect(state).toBeInstanceOf(Object);
   });
 
 });
