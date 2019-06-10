@@ -72,7 +72,7 @@ describe("Reducers", () => {
       expect([1]).toEqual(reducer([], action));
     });
 
-    it('never changes the same object', () => {
+    fit('never changes the same object', () => {
       const reducer = (state = [], action) => {
         if (action.type === 'APPEND') {
           return [...state, action.value];
@@ -129,17 +129,17 @@ describe("Reducers", () => {
 
     it('combines both initial values into a single object with each reducers name as property key', () => {
       const state = reducer(undefined, {});
-      expect(new reducer("hola mundo",{})).toMatchObject(state);
+      expect(reducer(undefined, {})).toMatchObject(state);
     });
 
     it('computes actions of all of its reducers [SET_NAME]', () => {
       const state = reducer(undefined, { type: 'SET_NAME', name: 'jack' });
-      expect(new reducer("hola mundo", { type: 'SET_NAME', name: 'jack' })).toMatchObject(state);
+      expect(reducer(undefined, { type: 'SET_NAME', name: 'jack' })).toMatchObject(state);
     });
 
     it('computes actions of all of its reducers [APPEND]', () => {
       const state = reducer(undefined, { type: 'APPEND', value: 'barker' });
-      expect(new reducer("hola mundo", { type: 'APPEND', value: 'barker' })).toMatchObject(state);
+      expect(reducer(undefined, { type: 'APPEND', value: 'barker' })).toMatchObject(state);
     });
 
   });

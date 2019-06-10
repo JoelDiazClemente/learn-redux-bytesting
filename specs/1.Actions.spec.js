@@ -29,7 +29,7 @@ describe("Actions", () => {
     const ADD_TODO = 'ADD_TODO';
     const addTodo = (text) => ({
       type: ADD_TODO,
-      text: 
+      text
     });
 
     expect(addTodo("hello world")).toMatchObject({type: expect.any(String)});
